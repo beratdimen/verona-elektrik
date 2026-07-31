@@ -154,21 +154,23 @@ export default async function HizmetDetailPage({ params }) {
         <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
           Diğer hizmetlerimiz
         </h2>
-        <div className="mt-8 grid gap-6 sm:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {others.map((s) => (
             <Link
               key={s.slug}
               href={`/hizmetler/${s.slug}`}
-              className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
+              className="group flex min-w-0 items-center gap-4 rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg"
             >
-              <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+              <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                 <Icon name={s.icon} className="size-6" />
               </span>
-              <div className="min-w-0">
+
+              <div className="min-w-0 flex-1">
                 <h3 className="truncate font-bold transition-colors group-hover:text-primary">
                   {s.title}
                 </h3>
-                <p className="truncate text-sm text-muted-foreground">
+
+                <p className="line-clamp-2 text-sm text-muted-foreground">
                   {s.short}
                 </p>
               </div>
