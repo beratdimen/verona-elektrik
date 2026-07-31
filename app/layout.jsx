@@ -4,6 +4,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import IntroScreen from "@/components/intro-screen";
 import "./globals.css";
+import FloatingWhatsapp from "../components/floating-whatsapp";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -41,6 +42,7 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
+        <FloatingWhatsapp />
         {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
